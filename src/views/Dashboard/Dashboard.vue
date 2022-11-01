@@ -4,7 +4,7 @@ import { onMounted } from "@vue/runtime-core";
 
 const productCount = ref(0);
 
-const listProducts = async () => {
+const productCounts = async () => {
   try {
     let res = await axios.get("https://api.storerestapi.com/products");
     productCount.value = res.data.data.length;
@@ -14,8 +14,9 @@ const listProducts = async () => {
 };
 
 onMounted(() => {
-  listProducts();
+  productCounts();
 });
+
 </script>
 
 <template>
